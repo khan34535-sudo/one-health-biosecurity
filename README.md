@@ -40,4 +40,15 @@ The framework contains specialized localized risk profiles across critical globa
 
 ## ⚖️ License
 
-This project is licensed under the **Apache License 2.0** - see the [LICENSE](LICENSE) file for details. The Apache 2.0 license grants all users free, perpetual commercial use, modification, and distribution rights, while providing an explicit grant of patent rights from contributors and protecting the authors from open-source software liability.
+# Copyright and License
+
+Copyright © 2026. All rights reserved.
+
+This repository and its entire contents—including but not limited to all source code, system architecture designs, user interface layouts, conceptual frameworks, text, graphics, and data structures—are the sole intellectual property of the author.
+
+### Terms of Use:
+* **No Replication:** No part of this project may be copied, reproduced, redistributed, or modified, in whole or in part, without explicit, prior written permission from the copyright holder.
+* **No Commercial Use:** Commercial use of this software, framework, or architecture is strictly prohibited.
+* **Review Only:** Permission is granted solely to view the materials in this public repository for personal evaluation or academic review purposes.
+
+For inquiries or permission requests, please contact the repository owner directly through GitHub.
