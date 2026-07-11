@@ -115,4 +115,94 @@ Pathogens experiencing significant geographic range expansions due to shifting e
 To verify the frontend's ability to fetch and parse external structures in real time, one authentic indicator is drawn directly from the open public Global Health Observatory OData API. The script invokes a native browser `fetch()` request to target the country's most recent life expectancy at birth record (index: `WHOSIS_000001`). This exchange is performed directly from the client's IP address with zero middleware or API keys required.
 
 ### Static Reference Matrices
-High-consequence environmental, zoonotic, and mycological risk summaries assigned per country exist as static structural objects written directly into the source file. These elements are loosely modeled on general public knowledge—such as familiar regional venomous species distributions or known pathogen patterns. They are not pulling from a live algorithmic data stream and have not been validated against active clinical or toxinology registries, serving as contextual reference text
+High-consequence environmental, zoonotic, and mycological risk summaries assigned per country exist as static structural objects written directly into the source file. These elements are loosely modeled on general public knowledge—such as familiar regional venomous species distributions or known pathogen patterns. They are not pulling from a live algorithmic data stream and have not been validated against active clinical or toxinology registries, serving as contextual reference text within the UI.
+
+### System Accuracy & Informational Reliability
+The system's live indicator outputs are exactly as reliable as the public global endpoints serving them. However, by decoupling data visualization from an application-specific backend server, the platform achieves total operational uptime immunity against dedicated database crashes, server configuration drops, or host credential expiration. If an external API is blocked or goes offline, the application cleanly falls back to its immutable internal static layers without failing.
+
+---
+
+## 5. Client-Side Architecture & Zero-Data Storage Policy
+The application enforces a strict, uncompromising **Zero-Data Storage Policy**. Because it is written as a unified, static front-end file, it possesses no physical mechanism to ingest or retain information outside of the current terminal. Its internal architecture yields precise security and reliability benefits:
+
+* **No Relational Storage Footprint:** There are no SQL or NoSQL databases, backend cloud logs, tracking pixels, or user state accounts.
+* **Transient Memory Isolation:** All calculations, spatial interactions, chosen passphrases, and interface layer toggles exist purely inside the browser's temporary, volatile RAM.
+* **Total Volatility:** The moment the operator reloads the page, navigates away, or exits the browser tab, the entire operational state machine is permanently deleted.
+
+> ⚠️ **UX/UI Architecture Principle**
+> While a zero-trace lifecycle naturally inherits the standard advantages of basic unprivileged static websites, it is explicitly designed to solve a specific UX friction point: proving that multi-layered biological mapping can be evaluated at the edge without necessitating the surveillance and compliance liabilities of centralized database servers.
+
+---
+
+## 6. Encryption Pipeline & Scannable QR Codes
+The core technical feature of this system is a functional, edge-native symmetric cryptographic subsystem. When an operator types a symmetric key into the interface to lock a regional risk snapshot, the following pipeline executes instantly within the browser kernel via hardware-accelerated instructions:
+
+1. **Passphrase Key Derivation** — The user's input string is fed into a native `PBKDF2` primitive using `SHA-256`, performing 150,000 iterations over a high-entropy 16-byte random salt generated via `crypto.getRandomValues()` to construct a robust 256-bit symmetric cryptographic key.
+2. **Symmetric AES-GCM Encryption** — The raw JSON data block containing the calculated risk factors and current timestamp is transformed into ciphertext via the Advanced Encryption Standard in Galois/Counter Mode (`AES-256-GCM`), utilizing an independent 12-byte initialization vector (IV).
+3. **Binary-to-Text Serialization** — The generated salt, initialization vector, and raw ciphertext are compiled and encoded into standard, clean Base64 string bundles.
+4. **QR Matrix Transformation** — This text string package is converted directly into a clean vector graphic via `qrcode.js`, producing an encrypted QR code ready to be read by external field devices.
+
+Because the app leverages the browser's audited `crypto.subtle` layer, security checking is absolute. If a single bit of the scannable QR matrix text code is altered, or if a verifying officer inputs a mismatched passkey, the Galois Message Authentication Code (GMAC) check fails automatically. Instead of outputting corrupted or false variables, the engine throws a native exception and completely blocks data access, making unauthorized modifications obvious.
+
+> 🛡️ **Cryptographic Boundary**
+> This architecture is not a public-key infrastructure (PKI), does not handle asymmetric identity tokens, and does not establish an active network communication tunnel. Because no key-exchange mechanism is built into the script, both parties must distribute and share the symmetric passkey out-of-band beforehand.
+
+---
+
+## 7. Realistic Applications & Global Utility
+The BERM v2.0 layout introduces an innovative structural roadmap for data validation across several critical real-world domains:
+
+* **Privacy-Insulated Border Security:** Customs, transit hubs, and immigration desks can verify incoming transit health matrices without tracking, logging, or centralizing the individual travel histories or personal identity markers of passengers, minimizing data privacy conflicts under International Health Regulations (IHR 2005).
+* **Infrastructure and Emergency Logistics:** Field deployment vectors, maritime vessels, and non-governmental medical responses operating in regions with disrupted, monitored, or fragile infrastructure can parse, modify, and carry environmental vulnerability indexes with them entirely offline.
+* **Oman Institutional Prototype Case:** In countries balancing highly active trade hubs alongside specific regional environmental ecological zones (such as managing incoming international trade in Muscat alongside localized ecological vectors or regional toxinology exposures in Salalah), this layout offers rapid localized risk assessment. It enables local authorities to model dynamic vector trends locally at check-points without requiring a massive central server roll-out. *(Note: This deployment remains an independent design prototype, showing client-side data manipulation options rather than active institutional deployment).*
+
+---
+
+## 8. Real-World Public Health Case Studies
+The core necessity of a decentralized, disconnected risk framework is highlighted by historical public health crises where database latency, rigid network demands, or geopolitical airspace border closures compromised coordination.
+
+### Case Study 1: Andes Orthohantavirus (Argentina)
+During historical high-consequence Hantavirus outbreaks in South America, local clusters often outpaced the communication networks of centralized health departments. The BERM v2.0 prototype directly mirrors this reality by explicitly exposing a data reporting interval lag indicator (e.g., 4–9 days) directly within the interface. By isolating static environmental and zoonotic vectors from real-time networks, local containment teams can continue calculating field safety markers and regional dryness vectors completely offline, independent of broken external data links.
+
+### Case Study 2: Airspace Redirections & Border Controls
+In high-consequence global health contingencies, commercial flights carrying suspected exposures have faced international airspace rejections, preventing scheduled arrivals and forcing emergency technical diversions to alternate international hubs. During these high-friction situations, clearing aircraft requires quick, secure data validation that satisfies both the landing airport's security standards and international data protection acts. By utilizing encrypted QR tokens, an aircraft's threat profile can be audited locally at the runway edge with zero centralized server lookups. This allows customs officials to quickly verify critical safety data without triggering administrative logjams or data leak risks.
+
+---
+
+## 9. Tech Stack
+
+| Technology Component | Operational Assignment |
+| :--- | :--- |
+| **HTML5 / CSS3** | Semantic layout wrapper |
+| **Tailwind CSS** | Responsive UI assembly via CDN |
+| **Vanilla JavaScript** | Asynchronous state engine orchestration |
+| **Leaflet.js 1.9.4** | Interactive canvas mapping |
+| **CartoDB Dark Matter** | High-contrast spatial base tiles |
+| **Font Awesome 6** | Standardized vector indicators |
+| **qrcode.js** | Client-side text matrix encoding |
+| **Web Crypto API** | Hardware-accelerated symmetric cryptographic primitives |
+| **WHO GHO OData API** | Remote metrics data fetch endpoint |
+
+---
+
+## Multidisciplinary Foundations & Compliance
+This software, design logic, and data tracking philosophy are established upon a multi-domain academic foundation:
+* **Honours BA in Anthropology** — McMaster University
+* **Bachelor of Arts in Psychology** — McMaster University
+* **Pre-Health Sciences Certificate** — Mohawk College
+
+---
+
+## Proprietary Usage Notice
+
+```text
+CONFIDENTIAL & PROPRIETARY
+
+Copyright (c) 2026 Global Risk Intelligence Framework Project Contributors. All rights reserved.
+
+This software, source code, and associated documentation are proprietary intellectual property. 
+Unauthorized copying, modification, distribution, reverse engineering, or public utilization of 
+this material, via any medium, is strictly prohibited without explicit, prior written permission 
+from the copyright holders.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITH NO WARRANTIES OF ANY KIND.
